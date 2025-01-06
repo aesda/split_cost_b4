@@ -1,4 +1,4 @@
-let unsettledAmount = 120;
+let tatalAmount = 120;
 let friends = [
   {
     firstName: 'Alex',
@@ -19,8 +19,44 @@ let friends = [
     email: 'charlie.trump@gmail.com',
   },
 ];
+let shoppingItems = [
+  {
+    title: "grocery Woolworths",
+    amount: 150,
+    date: new Date(),
+    isSettled: false,
+    },
+    {
 
-// Function to display friends
+    
+    title: "grocery aldi",
+    amount: 150,
+    date: new Date(),
+    isSettled: true,
+    }
+    
+]
+
+function showShoppingItems(shoppingItems) {
+const shoppingItemsElement = document.getElementById('shopping_items');
+let shoppingListElements = '';
+for(let shoppingItem of shoppingItems) {
+  let shoppingListElement = `<div>
+  <div>
+  <h3>${shoppingItem.title}</h3>
+  <time>${shoppingItem.date}</time>
+  </div>
+  <div>${shoppingItem.amount}</div>
+
+  </div>`
+  shoppingListElements += shoppingItemElement;
+
+
+}
+
+
+shoppingItemsElement.innerHTML = shoppingListElements;
+}
 function showFriends(friends) {
   const friendsElement = document.getElementById('friends');
   let friendListElements = '';
@@ -36,6 +72,6 @@ function showUnsettledAmount(unsettledAmount) {
   const unsettledAmountElement = document.getElementById('unsettled_amount');
   unsettledAmountElement.innerHTML = unsettledAmount;
 }
-
+showShoppingItems(shoppingItems);
 showFriends(friends);
-showUnsettledAmount(150);
+showUnsettledAmount(totalAmount / friends.length);
